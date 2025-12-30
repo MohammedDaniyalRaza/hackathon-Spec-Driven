@@ -3,22 +3,34 @@
   width: 100%;
 }
 
-.featureSvg {
-  height: 150px;
-  width: 150px;
-  margin-bottom: 1rem;
-}
-
 .featureCard {
+  display: flex;
+  flex-direction: column;
   background-color: var(--ifm-card-background-color);
   border-radius: 12px;
-  padding: 2rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
   margin-bottom: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  overflow: hidden;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .featureCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+[data-theme='dark'] .featureCard:hover {
+    box-shadow: 0 8px 24px rgba(255,255,255,0.1);
+}
+
+.featureScene {
+  height: 250px;
+  width: 100%;
+  background-color: var(--ifm-color-emphasis-100);
+  cursor: grab;
+}
+
+.featureTitle {
+    margin-top: 1.5rem;
+    text-align: center;
 }

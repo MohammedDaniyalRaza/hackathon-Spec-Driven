@@ -58,8 +58,12 @@ body {
 }
 
 .footer__link-item {
-  color: var(--ifm-heading-color);
+  color: #333; /* Make footer links visible in light mode */
   transition: color 0.2s;
+}
+
+[data-theme='dark'] .footer__link-item {
+    color: var(--ifm-heading-color);
 }
 
 .footer__link-item:hover {
