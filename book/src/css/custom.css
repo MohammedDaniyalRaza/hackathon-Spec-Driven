@@ -1,42 +1,77 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Any custom CSS here will be applied to the whole site.
  */
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #2563eb;
+  --ifm-color-primary-dark: #1d4ed8;
+  --ifm-color-primary-darker: #1e40af;
+  --ifm-color-primary-darkest: #1e3a8a;
+  --ifm-color-primary-light: #3b82f6;
+  --ifm-color-primary-lighter: #60a5fa;
+  --ifm-color-primary-lightest: #93c5fd;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #60a5fa;
+  --ifm-color-primary-dark: #3b82f6;
+  --ifm-color-primary-darker: #2563eb;
+  --ifm-color-primary-darkest: #1d4ed8;
+  --ifm-color-primary-light: #93c5fd;
+  --ifm-color-primary-lighter: #bfdbfe;
+  --ifm-color-primary-lightest: #dbeafe;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-.features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+/* Add a subtle animation on page load */
+body {
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Modern Footer */
+.footer {
+  background-color: #f8fafc;
+  border-top: 1px solid #e5e7eb;
+}
+
+[data-theme='dark'] .footer {
+  background-color: #020617;
+  border-top: 1px solid #1e293b;
+}
+
+.footer__title {
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+}
+
+.footer__links {
+  margin-top: 2rem;
+}
+
+.footer__link-item {
+  color: var(--ifm-heading-color);
+  transition: color 0.2s;
+}
+
+.footer__link-item:hover {
+  color: var(--ifm-color-primary);
+}
+
+.footer__copyright {
+  text-align: center;
+  margin-top: 3rem;
+  color: #64748b;
+}
+
+[data-theme='dark'] .footer__copyright {
+    color: #94a3b8;
 }
