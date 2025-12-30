@@ -75,18 +75,6 @@ const config: Config = {
           label: 'Book',
         },
         {
-          type: 'dropdown',
-          label: 'Chapters',
-          position: 'left',
-          items: [
-            {
-              label: 'Chapter 1',
-              to: '/chapter-1/what-is-physical-ai',
-            },
-            // ... more chapters
-          ],
-        },
-        {
           href: 'https://github.com/MohammedDaniyalRaza',
           label: 'Author\'s GitHub',
           position: 'right',
