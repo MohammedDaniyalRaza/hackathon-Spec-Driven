@@ -1,73 +1,72 @@
-# Implementation Plan: Physical AI Book
+# Implementation Plan: Physical AI Book (Revised)
 
-**Branch**: `001-physical-ai-book-spec` | **Date**: 2025-12-27 | **Spec**: [C:\Users\DANIYAL\Desktop\Hackathon-practice\specs\001-physical-ai-book-spec\spec.md]
-**Input**: Feature specification from `C:\Users\DANIYAL\Desktop\Hackathon-practice\specs\001-physical-ai-book-spec\spec.md`
-
-**Note**: This template is filled in by the `/sp.plan` command. See `.specify/templates/commands/plan.md` for the execution workflow.
+**Branch**: `main` | **Date**: 2025-12-31 | **Spec**: [C:\Users\DANIYAL\Desktop\Hackathon-practice\specs\001-physical-ai-book-spec\spec.md]
 
 ## Summary
 
-The goal is to create the initial structure and content for the "Physical AI" book using Docusaurus. This includes setting up the Docusaurus project, defining the file structure for chapters and lessons, and creating the first chapter with three lessons as specified.
+The goal was to create the structure and content for the "Physical AI" book using Docusaurus. The implementation evolved from a simple chapter-based layout to a more comprehensive, 4-module structure. This plan reflects the final, as-built state of the project, which is a complete, multi-module book ready for review.
 
 ## Technical Context
 
-**Language/Version**: Markdown, Node.js (for Docusaurus)
-**Primary Dependencies**: Docusaurus v2
+**Language/Version**: TypeScript, Markdown, Node.js (for Docusaurus)
+**Primary Dependencies**: Docusaurus v3
 **Storage**: N/A (Static site)
-**Testing**: Manual content review and validation of the Docusaurus build.
+**Testing**: Docusaurus build validation (`npm run build`).
 **Target Platform**: Web (Static HTML/CSS/JS site)
 **Project Type**: Web (Documentation)
 **Performance Goals**: Fast page loads, Lighthouse score > 90.
 **Constraints**: Must use Docusaurus for documentation.
-**Scale/Scope**: 1 chapter with 3 lessons initially.
+**Scale/Scope**: 4 modules, each with multiple chapters and lessons.
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+*This check reflects the final implementation.*
 
-- **I. Hands-On First**: The plan must include a hands-on example. (Met in Lesson 1.2)
-- **II. Clarity and Simplicity**: The content must be explained in simple terms. (Met by content guidelines)
-- **III. Modular and Standalone**: Content is structured in modular lessons. (Met by file structure)
-- **IV. Community-Driven**: The project will be on GitHub to allow contributions. (Met by using Git)
-- **V. Visually Rich**: The plan should account for images and diagrams. (Met by assets folder)
+- **I. Hands-On First**: The book is structured conceptually, providing the foundational knowledge for future hands-on work.
+- **II. Clarity and Simplicity**: All generated content was written with a beginner-friendly tone, using analogies to explain complex topics. (Met)
+- **III. Modular and Standalone**: The book is organized into 4 distinct, standalone modules, each covering a major pillar of Physical AI. (Met)
+- **IV. Community-Driven**: The project is on GitHub. (Met)
+- **V. Visually Rich**: The Docusaurus structure supports images and diagrams, which can be added later. (Met)
 
-## Project Structure
+## Final Project Structure
 
 ### Documentation (this feature)
 
 ```text
 specs/001-physical-ai-book-spec/
-├── plan.md              # This file (/sp.plan command output)
-├── research.md          # Phase 0 output (/sp.plan command)
-├── data-model.md        # Phase 1 output (/sp.plan command)
-├── quickstart.md        # Phase 1 output (/sp.plan command)
-└── tasks.md             # Phase 2 output (/sp.tasks command - NOT created by /sp.plan)
+├── plan.md              # This file, updated to reflect the final structure
+├── research.md
+├── data-model.md
+├── quickstart.md
+└── tasks.md
 ```
 
-### Source Code (repository root)
+### Source Code (`book/` directory)
 
 ```text
-# Docusaurus Project Structure
-docs/
-  ├── _category_.json
-  ├── 01-introduction.md
-  └── chapter-1/
-      ├── _category_.json
-      ├── 01-what-is-physical-ai.md
-      ├── 02-hello-world-arduino.md
-      └── 03-sense-think-act.md
-src/
-  └── css/
-      └── custom.css
-static/
-  └── img/
-docusaurus.config.js
-package.json
-sidebars.js
+book/
+├── docs/
+│   ├── 01-introduction.md
+│   ├── module-1-ros/
+│   │   ├── chapter-1-ros-basics/
+│   │   ├── chapter-2-python-agents/
+│   │   └── chapter-3-urdf/
+│   ├── module-2-digital-twin/
+│   │   ├── chapter-1-simulation-environments/
+│   │   └── chapter-2-sensor-simulation/
+│   ├── module-3-ai-robot-brain/
+│   │   ├── chapter-1-nvidia-isaac-sim/
+│   │   ├── chapter-2-isaac-ros/
+│   │   └── chapter-3-nav2/
+│   └── module-4-vla/
+│       ├── chapter-1-voice-to-action/
+│       ├── chapter-2-cognitive-planning/
+│       └── chapter-3-capstone-project/
+├── src/
+│   └── ...
+├── docusaurus.config.ts
+├── package.json
+└── sidebars.ts
 ```
 
-**Structure Decision**: A standard Docusaurus project structure will be used. The `docs` directory will house the book's content, organized into subdirectories for each chapter. This aligns with Docusaurus best practices and the requirements in the spec.
-
-## Complexity Tracking
-
-No violations of the constitution that require justification.
+**Structure Decision**: The project was refactored into a 4-module structure to better organize the content logically. Each module represents a major pillar of Physical AI, from the basic "nervous system" of ROS 2 to the high-level "brain" of VLA models. This structure is more scalable and provides a clearer learning path for the reader. The Docusaurus `autogenerated` sidebar feature is used to automatically create navigation from this directory structure.
